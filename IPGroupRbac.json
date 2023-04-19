@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "roleName": "IP Group Automation",
+    "description": "",
+    "assignableScopes": ["/subscriptions/7dd518a7-4e10-4b55-a313-86176f2154c9"],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Network/ipGroups/read",
+          "Microsoft.Network/ipGroups/write"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
