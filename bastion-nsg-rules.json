@@ -95,7 +95,7 @@
         "access": "Allow",
         "priority": 120,
         "direction": "Outbound",
-        "destinationPortRanges": ["43"]
+        "destinationPortRanges": ["443"]
       }
     },
     {
