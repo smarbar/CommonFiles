@@ -77,7 +77,7 @@
         "protocol": "*",
         "sourcePortRange": "*",
         "sourceAddressPrefix": "*",
-        "destinationAddressPrefix": "VirtualNetwork ",
+        "destinationAddressPrefix": "VirtualNetwork",
         "access": "Allow",
         "priority": 110,
         "direction": "Outbound",
