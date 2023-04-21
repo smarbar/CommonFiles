@@ -1,0 +1,27 @@
+{
+  "properties": {
+    "roleName": "Firewall Security Reader",
+    "description": "This administrator requires mostly reader privileges as maybe required in an auditor role. The permission grants visibility into existing rules and other properties of the firewall. This user is therefore only able to view and not make changes",
+    "assignableScopes": [],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Network/azurefirewalls/read",
+          "Microsoft.Network/azureFirewallFqdnTags/read",
+          "Microsoft.Network/azureFirewalls/applicationRuleCollections/read",
+          "Microsoft.Network/azureFirewalls/natRuleCollections/read",
+          "Microsoft.Network/azureFirewalls/networkRuleCollections/read",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",
+          "Microsoft.Network/virtualNetworks/read",
+          "Microsoft.Network/firewallPolicies/read",
+          "Microsoft.Network/firewallPolicies/ruleCollectionGroups/read",
+          "Microsoft.Resources/subscriptions/resourceGroups/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
