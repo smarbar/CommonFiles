@@ -2,7 +2,7 @@
   "properties": {
     "roleName": "Autoscale",
     "description": "Friendly description.",
-    "assignableScopes": ["/subscriptions/<SubscriptionID>"],
+    "assignableScopes": [],
     "permissions": [
       {
         "actions": [
