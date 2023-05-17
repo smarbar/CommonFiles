@@ -1,0 +1,125 @@
+{
+  "rules": [
+    {
+      "ruleType": "NetworkRule",
+      "name": "Service Traffic",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["WindowsVirtualDesktop"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Agent Traffic",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["AzureMonitor"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Azure Marketplace",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["AzureFrontDoor.Frontend"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Windows activation",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["kms.core.windows.net"],
+      "destinationPorts": ["1688"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Azure Windows activation",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["azkms.core.windows.net"],
+      "destinationPorts": ["1688"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Agent and SXS Stack Updates",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["mrsglobalsteus2prod.blob.core.windows.net"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Azure Portal Support",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["wvdportalstorageblob.blob.core.windows.net"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Azure Instance Metadata Service Endpoint",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["169.254.169.254"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["80"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Session Host Health Monitoring",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["168.63.129.16"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["80"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Certificate CRL OneOCSP",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["oneocsp.microsoft.com"],
+      "destinationPorts": ["80"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Certificate CRL MicrosoftDotCom",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["www.microsoft.com"],
+      "destinationPorts": ["80"]
+    }
+  ]
+}

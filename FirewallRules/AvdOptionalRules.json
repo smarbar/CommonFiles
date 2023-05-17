@@ -1,0 +1,48 @@
+{
+  "rules": [
+    {
+      "ruleType": "NetworkRule",
+      "name": "NTP",
+      "ipProtocols": ["TCP", "UDP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["time.windows.com"],
+      "destinationPorts": ["123"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "AuthToMSOL",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["login.microsoftonline.com"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "SigninToMSOL365",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["login.windows.net"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "DetectOSconnectedToInternet",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["www.msftconnecttest.com"],
+      "destinationPorts": ["443"]
+    }
+  ]
+}
