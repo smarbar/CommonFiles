@@ -1,4 +1,6 @@
 {
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "enforce-do-not-delete-lock-on-resource-group",
   "properties": {
     "displayName": "Deploy CanNotDelete Resource Lock on Resource Groups",
     "description": "Creates a resource lock at the resource group level for preventing resource deletion.",

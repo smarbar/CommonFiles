@@ -3,13 +3,17 @@
   "description": "Adds the default route table to subnets. Other route tables are replaced with the default route table.",
   "policyType": "Custom",
   "mode": "All",
-  "metadata": { "category": "Network" },
+  "metadata": {
+    "version": "1.0.0",
+    "category": "Network"
+  },
   "parameters": {
     "routeTableSettings": {
       "type": "Object",
       "metadata": {
         "displayName": "Route Table Settings",
-        "description": "Location-specific settings for route tables."
+        "description": "Location-specific settings for route tables.",
+        "strongType": "Microsoft.Network/routeTables"
       }
     }
   },
