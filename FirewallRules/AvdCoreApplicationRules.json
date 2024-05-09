@@ -1,0 +1,134 @@
+{
+  "rules": [
+    {
+      "ruleType": "ApplicationRule",
+      "name": "TelemetryService",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [],
+      "webCategories": [],
+      "targetFqdns": ["*.events.data.microsoft.com"],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    },
+    {
+      "ruleType": "ApplicationRule",
+      "name": "WindowsUpdate",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [
+        "WindowsUpdate",
+        "MicrosoftActiveProtectionService",
+        "WindowsDiagnostics"
+      ],
+      "webCategories": [],
+      "targetFqdns": [],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    },
+    {
+      "ruleType": "ApplicationRule",
+      "name": "UpdatesForOneDrive",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [],
+      "webCategories": [],
+      "targetFqdns": ["*.sfx.ms"],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    },
+    {
+      "ruleType": "ApplicationRule",
+      "name": "DigitcertCRL",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [],
+      "webCategories": [],
+      "targetFqdns": ["*.digicert.com"],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    },
+    {
+      "ruleType": "ApplicationRule",
+      "name": "AzureDNSresolution",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [],
+      "webCategories": [],
+      "targetFqdns": ["*.azure-dns.com", "*.azure-dns.net"],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    },
+    {
+      "ruleType": "ApplicationRule",
+      "name": "AzureStorage",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [],
+      "webCategories": [],
+      "targetFqdns": ["*.blob.core.windows.net"],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    },
+    {
+      "ruleType": "ApplicationRule",
+      "name": "windows net",
+      "protocols": [
+        {
+          "protocolType": "Https",
+          "port": 443
+        }
+      ],
+      "fqdnTags": [],
+      "webCategories": [],
+      "targetFqdns": ["*.windows.net"],
+      "targetUrls": [],
+      "terminateTLS": false,
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "destinationAddresses": [],
+      "sourceIpGroups": []
+    }
+  ]
+}

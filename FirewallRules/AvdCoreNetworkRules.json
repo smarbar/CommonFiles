@@ -2,6 +2,17 @@
   "rules": [
     {
       "ruleType": "NetworkRule",
+      "name": "AuthToMSOL",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["login.microsoftonline.com"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
       "name": "Service Traffic",
       "ipProtocols": ["TCP"],
       "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
@@ -20,6 +31,17 @@
       "destinationAddresses": ["AzureMonitor"],
       "destinationIpGroups": [],
       "destinationFqdns": [],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "Agent Traffic FQDN",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["gcs.prod.monitoring.core.windows.net"],
       "destinationPorts": ["443"]
     },
     {
@@ -120,6 +142,94 @@
       "destinationIpGroups": [],
       "destinationFqdns": ["www.microsoft.com"],
       "destinationPorts": ["80"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "NTP",
+      "ipProtocols": ["TCP", "UDP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["time.windows.com"],
+      "destinationPorts": ["123"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "SigninToMSOL365",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["login.windows.net"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "DetectOSconnectedToInternet",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["www.msftconnecttest.com"],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "MSGraph",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["graph.windows.net"],
+      "destinationPorts": ["80", "443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "MSRegistration",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": [],
+      "destinationIpGroups": [],
+      "destinationFqdns": ["enterpriseregistration.windows.net"],
+      "destinationPorts": ["80", "443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "STUN/TURN UDP",
+      "ipProtocols": ["UDP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["20.202.0.0/16"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["3478-3481"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "STUN/TURN TCP",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["20.202.0.0/16"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["443"]
+    },
+    {
+      "ruleType": "NetworkRule",
+      "name": "RDP Shortpath Endpoint",
+      "ipProtocols": ["TCP"],
+      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
+      "sourceIpGroups": [],
+      "destinationAddresses": ["*"],
+      "destinationIpGroups": [],
+      "destinationFqdns": [],
+      "destinationPorts": ["1024-65535"]
     }
   ]
 }

@@ -2,8 +2,12 @@
   "rules": [
     {
       "ruleType": "ApplicationRule",
-      "name": "TelemetryService",
+      "name": "Endpoint Manager",
       "protocols": [
+        {
+          "protocolType": "Http",
+          "port": 80
+        },
         {
           "protocolType": "Https",
           "port": 443
@@ -11,7 +15,10 @@
       ],
       "fqdnTags": [],
       "webCategories": [],
-      "targetFqdns": ["*.events.data.microsoft.com"],
+      "targetFqdns": [
+        "*.manage.microsoft.com",
+        "EnterpriseEnrollment.manage.microsoft.com"
+      ],
       "targetUrls": [],
       "terminateTLS": false,
       "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
@@ -20,16 +27,31 @@
     },
     {
       "ruleType": "ApplicationRule",
-      "name": "WindowsUpdate",
+      "name": "MEM – PS and Win32Apps",
       "protocols": [
+        {
+          "protocolType": "Http",
+          "port": 80
+        },
         {
           "protocolType": "Https",
           "port": 443
         }
       ],
-      "fqdnTags": ["WindowsUpdate"],
+      "fqdnTags": [],
       "webCategories": [],
-      "targetFqdns": [],
+      "targetFqdns": [
+        "swda01-mscdn.azureedge.net",
+        "swda02-mscdn.azureedge.net",
+        "swdb01-mscdn.azureedge.net",
+        "swdb02-mscdn.azureedge.net",
+        "swdc01-mscdn.azureedge.net",
+        "swdc02-mscdn.azureedge.net",
+        "swdd01-mscdn.azureedge.net",
+        "swdd02-mscdn.azureedge.net",
+        "swdin01-mscdn.azureedge.net",
+        "swdin02-mscdn.azureedge.net"
+      ],
       "targetUrls": [],
       "terminateTLS": false,
       "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
@@ -38,7 +60,7 @@
     },
     {
       "ruleType": "ApplicationRule",
-      "name": "UpdatesForOneDrive",
+      "name": "MEM – WNS Dependencies",
       "protocols": [
         {
           "protocolType": "Https",
@@ -47,7 +69,12 @@
       ],
       "fqdnTags": [],
       "webCategories": [],
-      "targetFqdns": ["*.sfx.ms"],
+      "targetFqdns": [
+        "*.notify.windows.com",
+        "*.wns.windows.com",
+        "sinwns1011421.wns.windows.com",
+        "sin.notify.windows.com"
+      ],
       "targetUrls": [],
       "terminateTLS": false,
       "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
@@ -56,8 +83,12 @@
     },
     {
       "ruleType": "ApplicationRule",
-      "name": "DigitcertCRL",
+      "name": "MDM Delivery Optimisation",
       "protocols": [
+        {
+          "protocolType": "Http",
+          "port": 80
+        },
         {
           "protocolType": "Https",
           "port": 443
@@ -65,43 +96,16 @@
       ],
       "fqdnTags": [],
       "webCategories": [],
-      "targetFqdns": ["*.digicert.com"],
-      "targetUrls": [],
-      "terminateTLS": false,
-      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
-      "destinationAddresses": [],
-      "sourceIpGroups": []
-    },
-    {
-      "ruleType": "ApplicationRule",
-      "name": "AzureDNSresolution1",
-      "protocols": [
-        {
-          "protocolType": "Https",
-          "port": 443
-        }
+      "targetFqdns": [
+        "*.do.dsp.mp.microsoft.com",
+        "*.dl.delivery.mp.microsoft.com",
+        "*.emdl.ws.microsoft.com",
+        "kv801.prod.do.dsp.mp.microsoft.com",
+        "geo.prod.do.dsp.mp.microsoft.com",
+        "emdl.ws.microsoft.com",
+        "2.dl.delivery.mp.microsoft.com",
+        "bg.v4.emdl.ws.microsoft.com"
       ],
-      "fqdnTags": [],
-      "webCategories": [],
-      "targetFqdns": ["*.azure-dns.com"],
-      "targetUrls": [],
-      "terminateTLS": false,
-      "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
-      "destinationAddresses": [],
-      "sourceIpGroups": []
-    },
-    {
-      "ruleType": "ApplicationRule",
-      "name": "AzureDNSresolution2",
-      "protocols": [
-        {
-          "protocolType": "Https",
-          "port": 443
-        }
-      ],
-      "fqdnTags": [],
-      "webCategories": [],
-      "targetFqdns": ["*.azure-dns.net"],
       "targetUrls": [],
       "terminateTLS": false,
       "sourceAddresses": ["[parameters('avd-hostpool-subnet')]"],
